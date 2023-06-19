@@ -1,5 +1,5 @@
 -- Create  a databasea_social_media_platform_api
-CREATE DATABASE IF NOT EXISTS ;
+CREATE DATABASE IF NOT EXISTS a_social_media_platform_api;
 USE a_social_media_platform_api;
 
 -- Create a users table
