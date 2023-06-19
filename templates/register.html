@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/scripts/registration.js"></script>
+    <title>A Social medial Platform API</title>
+</head>
+<body>
+    <form id="signupForm">
+        <h1>Sign up</h1>
+        <input type="text" name="firstName" placeholder="First name" required>
+        <input type="text" name="lastName" placeholder="Last name" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirmPassword" placeholder="Confirm password" required>
+        <div id="successMessage">{{ message }}</div>
+        <button type="submit">Sign up</button>
+        <p>Already have an account? <a href="login.html">Sign in</a></p>
+    </form>
+</body>
+</html>
