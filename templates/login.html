@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/styles/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/scripts/registration.js"></script>
+    <script src="../static/scripts/login.js"></script>
     <title>A Social medial Platform API</title>
 </head>
 <body>
-    <form>
+    <form id="loginForm">
         <h1>Sign in</h1>
         <input type="text" name="username" placeholder="Username" required>
+        <div id="signin_username_error">{{ signin_username_error }}</div>
         <input type="password" name="password" placeholder="Password" required>
-        <button class="btn" type="submit">Sign in</button>
-        <p>Don't have an account? <a href="register.html">Sign up</a> </p>       
+        <div id="signin_password_error">{{ signin_password_error }}</div>
+        <button class="btn signIn" type="submit">Sign in</button>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Sign up</a> </p>       
     </form>
 </body>
 </html>

@@ -19,7 +19,27 @@ $(document).ready(function() {
             contentType: 'application/json',
             success: function(response) {
                 $('#signupForm')[0].reset();
-                $('#successMessage').text(response.message);
+                if (response.username_msg) {
+                    $('#username_msg').text(response.username_msg);
+                    setTimeout(function() {
+                        $('#username_msg').text('');
+                    }, 3000);
+                } else if (response.email_msg) {
+                    $('#email_msg').text(response.email_msg);
+                    setTimeout(function() {
+                        $('#email_msg').text('');
+                    }, 3000);
+                } else if (response.password_msg) {
+                    $('#password_msg').text(response.password_msg);
+                    setTimeout(function() {
+                        $('#password_msg').text('');
+                    }, 3000);
+                } else if (response.success_msg) {
+                    $('#success_msg').text(response.success_msg);
+                    setTimeout(function() {
+                        $('#success_msg').text('');
+                    }, 5000);
+                }
             },
             error: function(error) {
                 console.log(error)

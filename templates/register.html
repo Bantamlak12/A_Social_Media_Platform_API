@@ -14,12 +14,15 @@
         <input type="text" name="firstName" placeholder="First name" required>
         <input type="text" name="lastName" placeholder="Last name" required>
         <input type="text" name="username" placeholder="Username" required>
+        <div id="username_msg">{{ username_msg }}</div>
         <input type="email" name="email" placeholder="Email" required>
+        <div id="email_msg">{{ email_msg }}</div>
         <input type="password" name="password" placeholder="Password" required>
         <input type="password" name="confirmPassword" placeholder="Confirm password" required>
-        <div id="successMessage">{{ message }}</div>
+        <div id="password_msg">{{ password_msg }}</div>
+        <div id="success_msg">{{ message }}</div>
         <button type="submit">Sign up</button>
-        <p>Already have an account? <a href="login.html">Sign in</a></p>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Sign in</a></p>
     </form>
 </body>
 </html>

@@ -22,11 +22,11 @@ mysql = MySQL(app)
 def register_user(first_name, last_name, username, email, password, confirm_password):
     # Check if username is alphanumeric
     if not re.match("^[a-zA-Z0-9]+$", username):
-        return 'Username is invalid!'
+        return jsonify({'username_msg': 'Invalid username!'})
 
     # Check if email is valid
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
-        return 'Email is invalid!'
+        return jsonify({'email_msg': 'Email is invalid!'})
 
     cur = mysql.connection.cursor()
     # Check if username or email already exists in the database
@@ -41,19 +41,19 @@ def register_user(first_name, last_name, username, email, password, confirm_pass
     existing_email = cur.fetchone()
 
     if existing_username:
-        return 'Username already taken!'
+        return jsonify({'username_msg': 'Username already taken!'})
     elif existing_email:
-        return 'Email already taken!'
+        return jsonify({'email_msg': 'Email already taken!'})
     else:
         # Store user information in database
         # Check if the passwords match and hashed it
         if password != confirm_password:
-            return 'Password do not match!'
+            return jsonify({'password_msg': 'Password do not match!'})
 
         hashed_password = generate_password_hash(password)
         cur.execute('INSERT INTO users (first_name, last_name, username, email, password) VALUES (%s, %s, % s, %s, %s)',
                     (first_name, last_name, username, email, hashed_password))
         mysql.connection.commit()
 
-        # Return message on success
-        return 'You have successfully registered!'
+        # Return success message
+        return jsonify({'success_msg': 'You have successfully registered!'})
