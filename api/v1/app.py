@@ -1,6 +1,8 @@
 from flask import request, jsonify, render_template, redirect, url_for
 from models.register import register_user, app
 from models.login import login_user
+# from flask_jwt_extended import unset_access_cookies, jwt_required, get_jwt_identity
+from datetime import datetime, timedelta
 
 
 @app.route('/', methods=['GET'], strict_slashes=False)
@@ -52,6 +54,18 @@ def feeds():
     if access_token:
         return render_template('feeds.html')
     return redirect(url_for('login'))
+
+
+@app.route('/logout', methods=['POST'], strict_slashes=False)
+def logout():
+    logout_message = 'Successful Sign out'
+    response = jsonify({'message': logout_message})
+
+    # Clear the access token cookie setting the date already passed
+    response.set_cookie('access_token', '',
+                        expires=datetime.now() - timedelta(days=1))
+
+    return response
 
 
 if __name__ == '__main__':

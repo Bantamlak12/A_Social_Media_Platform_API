@@ -26,7 +26,7 @@ def register_user(first_name, last_name, username, email, password, confirm_pass
 
     # Check if email is valid
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
-        return jsonify({'email_msg': 'Email is invalid!'})
+        return jsonify({'email_msg': 'Invalid email!'})
 
     cur = mysql.connection.cursor()
     # Check if username or email already exists in the database
