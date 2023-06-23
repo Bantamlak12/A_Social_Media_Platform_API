@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+.feeds-container {
+    height: 100vh;
+    width: 50%;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.feeds-container header {
+    background-color: #0080ff;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.feeds-container header nav {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feeds-container header .logo {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.feeds-container header #signout {
+    background-color: orange;
+    color: #fff;
+    width: 100px;
+    padding: 7px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.feeds-container header #signout:hover {
+    scale: 1.05;
+}
+
+.feeds-container article {
+    border: 1px solid #0080ff;
+    background-color: #fff;
+    flex: 1;
+}
+
+.feeds-container article .create-post {
+    margin: 20px 40px;
+}
+
+.feeds-container footer {
+    background-color: #0080ff;
+    padding: 3%;
+    margin-top: auto;
+}
+
+.feeds-container footer p {
+    text-align: center;
+}
+
+article .create-post form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+/* Input text */
+#title {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    background-color: #107896;
+    border: none;
+}
+#message {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #107896;
+    border:none;
+}
+
+#submit {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 5px;
+    width:100px;
+    background-color: #107896;
+}
+#message::placeholder,
+#title::placeholder {
+    color: #fff;
+}
+
+#submit:hover {
+    background-color: #0080ff;
+}
+.create-post .user {
+    margin-bottom: 7px;
+}
+.create-post .user span {
+    font-size: 12px;
+}
+.create-post .user {
+    margin-top: 30px
+}
+
+#delete {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 5px;
+    width:100px;
+    background-color: #990000;
+}
+#delete:hover {
+    background-color: #cc0000;
+}
+
+@media (max-width: 969px) {
+    header #signout {
+        font-size: 10px;
+    }
+
+    form, #submit {
+        max-width: 100%;
+    }
+}

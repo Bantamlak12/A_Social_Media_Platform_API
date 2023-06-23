@@ -3,8 +3,6 @@
     padding: 0;
     font-family: sans-serif Arial, Helvetica;
     box-sizing: border-box;
-    /* background-color: #121212;
-    color: #fff; */
 }
 
 body {
@@ -12,12 +10,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* background-color: #000; */
 }
 
 form {
     border: 1px solid;
     padding: 10px;
     text-align: center;
+    background-color: #fff;
 }
 h1 {
     margin-bottom: 40px;
