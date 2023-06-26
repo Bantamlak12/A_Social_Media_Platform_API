@@ -1,7 +1,11 @@
-import re
+#!/usr/bin/python3
+"""This module defines a logic to sign up"""
+from werkzeug.security import generate_password_hash
 from flask import Flask, jsonify
 from flask_mysqldb import MySQL
-from werkzeug.security import generate_password_hash
+from email_validator import validate_email, EmailNotValidError
+import re
+
 
 app = Flask(__name__, template_folder='../templates',
             static_folder='../static')
@@ -19,13 +23,19 @@ app.config['MYSQL_DB'] = app.config['MYSQL_DB']
 mysql = MySQL(app)
 
 
-def register_user(first_name, last_name, username, email, password, confirm_password):
+def signup_user(first_name, last_name, username, email, password,
+                confirm_password):
+    """ This method accepts user information from the frontend and stores
+        it in a database after necessary validation.
+    """
     # Check if username is alphanumeric
     if not re.match("^[a-zA-Z0-9]+$", username):
         return jsonify({'username_msg': 'Invalid username!'})
 
-    # Check if email is valid
-    if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+    # Check if the email is valid
+    try:
+        validate_email(email)
+    except EmailNotValidError:
         return jsonify({'email_msg': 'Invalid email!'})
 
     cur = mysql.connection.cursor()
@@ -50,10 +60,13 @@ def register_user(first_name, last_name, username, email, password, confirm_pass
         if password != confirm_password:
             return jsonify({'password_msg': 'Password do not match!'})
 
+        # Hash and store it into the database.
         hashed_password = generate_password_hash(password)
-        cur.execute('INSERT INTO users (first_name, last_name, username, email, password) VALUES (%s, %s, % s, %s, %s)',
-                    (first_name, last_name, username, email, hashed_password))
+        query = 'INSERT INTO users (first_name, last_name, username, email,\
+                                    password) VALUES (%s, %s, % s, %s, %s)'
+        values = (first_name, last_name, username, email, hashed_password)
+        cur.execute(query, values)
         mysql.connection.commit()
 
         # Return success message
-        return jsonify({'success_msg': 'You have successfully registered!'})
+        return jsonify({'success_msg': 'Successfully Signed up!'})
