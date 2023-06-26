@@ -43,11 +43,12 @@ body {
 .feeds-container header #signout {
     background-color: orange;
     color: #fff;
-    width: 100px;
-    padding: 7px 20px;
+    width: 80px;
+    padding: 6px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
 }
 
 .feeds-container header #signout:hover {
@@ -106,6 +107,7 @@ article .create-post form {
     margin-top: 5px;
     width:100px;
     background-color: #107896;
+    cursor: pointer;
 }
 #message::placeholder,
 #title::placeholder {
@@ -125,16 +127,29 @@ article .create-post form {
     margin-top: 30px
 }
 
-#delete {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    margin-top: 5px;
-    width:100px;
-    background-color: #990000;
+/* Post title */
+.post-title {
+    margin-bottom: 5px;
 }
-#delete:hover {
-    background-color: #cc0000;
+
+/* Trash can */
+.fa-solid.fa-trash {
+
+    font-size: 26px;
+    color: #e60000;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Trash can hover effect */
+.fa-solid.fa-trash:hover {
+    color: #ff0000;
+}
+
+/* Post success message */
+#success {
+    color: #1aff1a;
+    margin-top: 10px;
 }
 
 @media (max-width: 969px) {

@@ -14,47 +14,37 @@
     <div class="feeds-container">
         <header>
             <nav>
-                <div class="logo">Welcome Bante</div>
+                <div class="logo">Welcome {{ first_name }}</div>
                 <a href="" id="signout">Sign out</a>
             </nav>
         </header>
         <article>
             <div class="create-post">
-                <form>
-                    <input type="text" id="title" placeholder="What's the post title?">
-                    <textarea id="message" cols="30" rows="7" placeholder="What's in your mind?"></textarea>
+                <form id="createPost">
+                    <input type="text" name="title" id="title" placeholder="What's the post title?">
+                    <textarea id="message" name="post" cols="30" rows="7" placeholder="{{ first_name}}, what's in your mind?"></textarea>
                     <button type="submit" id="submit">Post</button>
+                    <div id="success">&nbsp;</div>
                 </form>
             </div>
             <div class="create-post">
-                <h3 class="user">Bante <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <button type="submit" id="delete">Delete</button>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-                <h3 class="user">John <span>June 23, 2023</span> </h3>
-                <p class="post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt laboriosam at reiciendis? Deleniti qui animi blanditiis quae nostrum architecto, beatae veniam eligendi, commodi officiis temporibus maxime iste sed nihil.</p>
-            </div>
+                <!-- post[0] is user_id -->
+                <!-- post[1] is username -->
+                <!-- post[2] is content_title -->
+                <!-- post[3] is content -->
+                <!-- post[4] is created_at-->
+                <!-- post[5] is content_id-->
+                {% for post in posts %}
+                    <h3 class="user">{{ post[1] }} <span>{{ post[4] }}</span> </h3>
+                    {% if post[2] %}
+                        <h4 class="post-title">Title: {{ post[2] }}</h4>
+                    {% endif %}
+                        <p class="post">{{ post[3] }}</p>
+                    <!-- Check if the user_id who created a post is similar to any of posts user_id -->
+                    {% if post_owner_id == post[0] %}
+                        <i class="fa-solid fa-trash" data-content-id="{{ post[5] }}"></i>
+                    {% endif %}
+                {% endfor %}
         </article>
         <footer>
             <p>All right reserved!</p>
