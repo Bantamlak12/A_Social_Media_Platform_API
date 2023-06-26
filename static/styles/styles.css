@@ -1,77 +1,92 @@
+/* THESE STYLE ATTRIBUTES ARE GIVEN TO THE HTML TEMPLATES signup.html and signin.html*/
+
+/* THE UNIVERSAL SELECTOR */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif Arial, Helvetica;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif Arial, Helvetica;
+  box-sizing: border-box;
 }
 
+/* THE BODY */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* background-color: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #000; */
 }
 
+/* THE  SIGN UP AND SIGN IN FORM */
 form {
-    border: 1px solid;
-    padding: 10px;
-    text-align: center;
-    background-color: #fff;
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
 }
+
+/* THE `sign up` AND `sign in` H1 TEXTS IN THE FORM */
 h1 {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
+/* THE SIGN UP AND SIGN IN FIELDS */
 input {
-    display: block;
-    margin: 20px auto;
-    width: 400px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    padding-left: 10px;
-    font-size: 14px;
+  display: block;
+  margin: 20px auto;
+  width: 400px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 14px;
 }
+
+/* THE BUTTON IN THE `sign up` and `sign in` FORM */
 button {
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    cursor:pointer;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
+
+/* THE BUTTON IN THE `sign up` and `sign in` FORM; HOVER EFFECT */
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
+/* SUCCESS MESSAGE WHILE SUCCESSFULL SIGN UP AND SIGN IN */
 #success_msg {
-    color: #1aff1a;
-    margin-bottom: 15px;
-    font-size: 18px;
+  color: #1aff1a;
+  margin-bottom: 15px;
+  font-size: 18px;
 }
 
+/* HOW ERROR MESSAGES DISPLAY WHILE UNSUCCESSFULL SIGN UP AND SIGN IN */
 #username_msg,
 #email_msg,
 #password_msg,
 #signin_username_error,
 #signin_password_error {
-    text-align: left;
-    margin-left: 7px;
-    color: #ff0000;
+  text-align: left;
+  margin-left: 7px;
+  color: #ff0000;
 }
 
+/* THE PAGE IS DESIGNED TO BE RESPONSIVE */
 @media (max-width: 768px) {
-    form {
-        width: 80%;
-    }
+  form {
+    width: 80%;
+  }
 
-    input {
-        width: 100%;
-    }
+  input {
+    width: 100%;
+  }
 
-    button {
-        width: 100%;
-    }
+  button {
+    width: 100%;
+  }
 }

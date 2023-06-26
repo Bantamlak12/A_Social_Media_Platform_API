@@ -1,163 +1,182 @@
+/* THE HTML TEMPLATE feeds.html IS GIVEN THESE STYLE ATTRIBUTES. */
+
+/* UNIVERSAL SELECTOR */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman', Times, sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, sans-serif;
+  box-sizing: border-box;
 }
 
+/* THE BODY */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
 }
 
-.feeds-container {
-    height: 100vh;
-    width: 50%;
-    background-color: #ffff;
-    display: flex;
-    flex-direction: column;
+/* A CONTAINER INSIDE THE BODY */
+.container {
+  height: 100vh;
+  width: 50%;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
 }
 
-.feeds-container header {
-    background-color: #0080ff;
-    position: relative;
-    padding: 0 2rem;
+/* THE HEADER */
+.container header {
+  background-color: #0080ff;
+  position: relative;
+  padding: 0 2rem;
 }
 
-.feeds-container header nav {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* THE TEXTS INSIDE THE HEADER; THE LOGO AND SIGN-OUT */
+.container header nav {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.feeds-container header .logo {
-    font-size: 35px;
-    font-weight: bold;
+/* THE `Welcome` LOGO INSIDE THE HEADER */
+.container header .logo {
+  font-size: 35px;
+  font-weight: bold;
 }
 
-.feeds-container header #signout {
-    background-color: orange;
-    color: #fff;
-    width: 80px;
-    padding: 6px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
+/* THE `sign out` BUTTON INSIDE THE LOGO */
+.container header #signout {
+  background-color: orange;
+  color: #fff;
+  width: 80px;
+  padding: 6px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
 }
 
-.feeds-container header #signout:hover {
-    scale: 1.05;
+/* THE `sign out` BUTTON INSIDE THE LOGO; HOVER EFFECT */
+.container header #signout:hover {
+  scale: 1.05;
 }
 
-.feeds-container article {
-    border: 1px solid #0080ff;
-    background-color: #fff;
-    flex: 1;
+/* MAIN POST ENVIRONMENT */
+.container article {
+  border: 1px solid #0080ff;
+  background-color: #fff;
+  flex: 1;
 }
 
-.feeds-container article .create-post {
-    margin: 20px 40px;
+/* POST-CREATION AND POST SHOW AREAS */
+.container article .create-post,
+.show-post {
+  margin: 20px 40px;
 }
 
-.feeds-container footer {
-    background-color: #0080ff;
-    padding: 3%;
-    margin-top: auto;
-}
-
-.feeds-container footer p {
-    text-align: center;
-}
-
+/* THE FORM TO CREATE A POST */
 article .create-post form {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
 }
 
-/* Input text */
+/* THE FORM; THE POST TITLE */
 #title {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 20px;
-    margin-bottom: 5px;
-    background-color: #107896;
-    border: none;
-}
-#message {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 16px;
-    border-radius: 20px;
-    background-color: #107896;
-    border:none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  background-color: #107896;
+  border: none;
 }
 
-#submit {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    margin-top: 5px;
-    width:100px;
-    background-color: #107896;
-    cursor: pointer;
+/* THE FORM; THE POST CONTENT */
+#message {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #107896;
+  border: none;
 }
+
+/* THE FORM; THE `post` BUTTON */
+#submit {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 5px;
+  width: 100px;
+  background-color: #107896;
+  cursor: pointer;
+}
+
+/* THE FORM;  POST TITLE AND CONTENT*/
 #message::placeholder,
 #title::placeholder {
-    color: #fff;
+  color: #fff;
 }
 
+/* THE BUTTON `post` HOVER EFFECT */
 #submit:hover {
-    background-color: #0080ff;
-}
-.create-post .user {
-    margin-bottom: 7px;
-}
-.create-post .user span {
-    font-size: 12px;
-}
-.create-post .user {
-    margin-top: 30px
+  background-color: #0080ff;
 }
 
-/* Post title */
+/* USERS WHO CREATED A POST */
+.show-post .user {
+  margin-top: 30px;
+  margin-bottom: 7px;
+}
+
+/* DATE OF THE POST CREATED */
+.show-post .user span {
+  font-size: 12px;
+}
+
+/* THE POST TITLE; THE CREATED ONE */
 .post-title {
-    margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
-/* Trash can */
+/* THE TRASH CAN */
 .fa-solid.fa-trash {
-
-    font-size: 26px;
-    color: #e60000;
-    margin-top: 10px;
-    cursor: pointer;
+  font-size: 26px;
+  color: #e60000;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-/* Trash can hover effect */
+/* THE TRASH CAN HOVER EFFECT */
 .fa-solid.fa-trash:hover {
-    color: #ff0000;
+  color: #ff0000;
 }
 
-/* Post success message */
-#success {
-    color: #1aff1a;
-    margin-top: 10px;
+/* THE FOOTER */
+.container footer {
+  background-color: #0080ff;
+  padding: 3%;
+  margin-top: auto;
 }
 
+/* THE FOOTER TEXT */
+.container footer p {
+  text-align: center;
+}
+
+/* THE PAGE IS DESIGNED TO BE RESPONSIVE */
 @media (max-width: 969px) {
-    header #signout {
-        font-size: 10px;
-    }
+  header #signout {
+    font-size: 10px;
+  }
 
-    form, #submit {
-        max-width: 100%;
-    }
+  form,
+  #submit {
+    max-width: 100%;
+  }
 }
