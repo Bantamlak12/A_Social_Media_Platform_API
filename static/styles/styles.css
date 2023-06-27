@@ -1,20 +1,80 @@
-/* THESE STYLE ATTRIBUTES ARE GIVEN TO THE HTML TEMPLATES signup.html and signin.html*/
+/* THESE STYLE ATTRIBUTES ARE GIVEN TO THE HTML TEMPLATES home.html, signup.html and signin.html*/
 
 /* THE UNIVERSAL SELECTOR */
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif Arial, Helvetica;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif Arial, Helvetica;
 }
 
-/* THE BODY */
+/* APPLIES TO THE THE BODY */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  /* background-color: #000; */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* APPLIES TO THE HEADER */
+header {
+  background-color: #0080ff;
+  padding: 25px 10%;
+}
+
+/* APPLIES TO THE HEADER; DESKTOP VIEW */
+.desktop-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* THE NAVIGATIONS ON THE HEADER */
+.home a,
+ul li a,
+.mobile-menu a {
+  color: #fff;
+}
+
+/* THE `signin and signup` LINKS ON THE HEADER */
+.desktop-menu ul {
+  display: flex;
+}
+
+/* THE `signin and signup` LINKS ON THE HEADER */
+.desktop-menu ul li {
+  padding: 0 20px;
+}
+
+/* HOVER EFFECT FOR THE LINKS ON THE HEADER */
+.desktop-menu .home a:hover,
+.desktop-menu ul li a:hover {
+  color: orange;
+}
+
+/* THE `home` LINK */
+.desktop-menu .home {
+  margin-right: auto;
+}
+
+/* MOBILE VIEW; MAKING RESPONSIVE */
+.mobile-menu {
+  display: none;
+}
+
+/* THE TOGGLE BAR */
+.menu-toggle {
+  cursor: pointer;
+}
+
+/* MAIN CONTENT AREA */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15%;
 }
 
 /* THE  SIGN UP AND SIGN IN FORM */
@@ -22,11 +82,12 @@ form {
   border: 1px solid;
   padding: 10px;
   text-align: center;
-  background-color: #fff;
+  margin: 5% auto;
 }
 
 /* THE `sign up` AND `sign in` H1 TEXTS IN THE FORM */
 h1 {
+  font-size: 30px;
   margin-bottom: 40px;
 }
 
@@ -47,7 +108,7 @@ button {
   width: 100px;
   height: 40px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 14px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -76,6 +137,19 @@ button:hover {
   color: #ff0000;
 }
 
+/* THE FOOTER */
+footer {
+  background-color: #0080ff;
+  padding: 25px;
+  margin-top: auto;
+}
+
+/* THE FOOTER'S TEXT */
+footer p {
+  text-align: center;
+  color: #fff;
+}
+
 /* THE PAGE IS DESIGNED TO BE RESPONSIVE */
 @media (max-width: 768px) {
   form {
@@ -88,5 +162,40 @@ button:hover {
 
   button {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+    align-items: center;
+    float: right;
+  }
+
+  .menu-toggle {
+    color: #fff;
+  }
+
+  .menu {
+    background-color: #b0d7ff;
+    display: none;
+    padding: 5%;
+    position: absolute;
+    top: 7%;
+    right: 0%;
+    width: 80%;
+  }
+  .menu li {
+    padding: 15px;
+    text-align: center;
+  }
+  .menu li a {
+    text-align: center;
+  }
+  .menu li a:hover {
+    color: orange;
   }
 }

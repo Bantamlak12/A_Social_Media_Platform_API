@@ -48,4 +48,8 @@ $(document).ready(function () {
       },
     });
   });
+  // Reveal the menu while the bar button is clicked
+  $(".menu-toggle").click(function () {
+    $(".menu").toggle();
+  });
 });

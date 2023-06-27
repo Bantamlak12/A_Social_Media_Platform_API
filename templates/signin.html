@@ -3,12 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../static/styles/styles.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../static/scripts/signin.js"></script>
     <title>A Social medial Platform API</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="desktop-menu">
+          <li class="home"><a href="{{ url_for('home') }}">Home</a></li>
+          <ul>
+            <li><a href="{{ url_for('signin') }}">Sign in</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+          </ul>
+        </div>
+        <div class="mobile-menu">
+          <div class="menu">
+            <li class="home"><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('signin') }}">Sign in</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+          </div>
+          <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
     <form id="signinForm">
       <h1>Sign in</h1>
       <input type="text" name="username" placeholder="Username" required />
@@ -20,5 +48,8 @@
         Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a>
       </p>
     </form>
+    <footer>
+      <p>&copy2023 All rights reserved.</p>
+    </footer>
   </body>
 </html>
