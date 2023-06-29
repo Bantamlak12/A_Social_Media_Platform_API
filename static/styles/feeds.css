@@ -99,6 +99,11 @@ article {
   margin: 20px 40px;
 }
 
+/* CREATE SPACE BETWEEN USERS */
+.show-post .user {
+  margin-top: 35px;
+}
+
 /* THE FORM; THE POST CONTENT */
 #message {
   padding-top: 10px;
