@@ -6,84 +6,79 @@
   padding: 0;
   font-family: "Times New Roman", Times, sans-serif;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
 /* THE BODY */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background-color: #000;
-}
-
-/* A CONTAINER INSIDE THE BODY */
-.container {
-  height: 100vh;
-  width: 50%;
-  background-color: #ffff;
   display: flex;
   flex-direction: column;
 }
 
 /* THE HEADER */
-.container header {
+header {
   background-color: #0080ff;
-  position: relative;
-  padding: 0 2rem;
-}
-
-/* THE TEXTS INSIDE THE HEADER; THE LOGO AND SIGN-OUT */
-.container header nav {
-  width: 100%;
-  height: 120px;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
+  padding: 20px 5%;
 }
 
-/* THE `Welcome` LOGO INSIDE THE HEADER */
-.container header .logo {
-  font-size: 35px;
-  font-weight: bold;
-  color: #fff;
+/* THE HEADER `Welcome logo` */
+header .logo {
+  font-size: 30px;
+  margin-right: auto;
 }
 
-/* THE `sign out` BUTTON INSIDE THE LOGO */
-.container header #signout {
-  background-color: orange;
-  color: #fff;
-  width: 80px;
-  padding: 6px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
+/* THE BAR TOGGGLE MENU */
+.fa-bars {
+  cursor: pointer;
+}
+
+/* THE DROPDOWN MENU */
+nav {
+  background-color: #0080ff;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  top: 8%;
+  display: none;
+}
+
+/* THE DROP DOWN LISTS */
+nav li {
+  padding: 10px;
   text-align: center;
 }
 
-/* THE `sign out` BUTTON INSIDE THE LOGO; HOVER EFFECT */
-.container header #signout:hover {
-  scale: 1.05;
+/* EACH DROPDOWN'S MENU */
+nav li a {
+  color: #fff;
 }
 
-/* MAIN POST ENVIRONMENT */
-.container article {
-  border: 1px solid #0080ff;
-  background-color: #fff;
-  flex: 1;
+/* THE DROPDOWN MENU'S HOVER EFFECT */
+nav li a:hover {
+  color: orange;
 }
 
-/* POST-CREATION AND POST SHOW AREAS */
-.container article .create-post,
-.show-post {
-  margin: 20px 40px;
+/* THE MAIN CONTENT AREA */
+article {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 0 25%;
+  flex-grow: 1;
 }
 
 /* THE FORM TO CREATE A POST */
-article .create-post form {
+.create-post form {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  /* width: 100%; */
+  max-width: 400px;
+  /* margin: 0 auto; */
 }
 
 /* THE FORM; THE POST TITLE */
@@ -94,6 +89,12 @@ article .create-post form {
   margin-bottom: 5px;
   background-color: #107896;
   border: none;
+}
+
+/* POST-CREATION AND POST SHOW AREAS */
+.create-post,
+.show-post {
+  margin: 20px 40px;
 }
 
 /* THE FORM; THE POST CONTENT */
@@ -132,7 +133,6 @@ article .create-post form {
 
 /* USERS WHO CREATED A POST */
 .show-post .user {
-  margin-top: 30px;
   margin-bottom: 7px;
 }
 
@@ -160,26 +160,35 @@ article .create-post form {
 }
 
 /* THE FOOTER */
-.container footer {
+footer {
   background-color: #0080ff;
-  padding: 3%;
+  padding: 25px;
   margin-top: auto;
 }
 
 /* THE FOOTER TEXT */
-.container footer p {
+footer p {
   text-align: center;
-  color: #fff;
 }
 
-/* THE PAGE IS DESIGNED TO BE RESPONSIVE */
-@media (max-width: 969px) {
-  header #signout {
-    font-size: 10px;
+/* DESIGNED TO BE RESPONSIVE FOR DEVICES */
+@media only screen and (max-width: 768px) {
+  header .logo {
+    font-size: 24px;
   }
+  nav {
+    width: 40%;
+  }
+  article {
+    padding: 0 3%;
+  }
+}
 
-  form,
-  #submit {
-    max-width: 100%;
+@media only screen and (max-width: 576px) {
+  header .logo {
+    font-size: 20px;
+  }
+  nav {
+    width: 50%;
   }
 }

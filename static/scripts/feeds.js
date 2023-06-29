@@ -43,4 +43,8 @@ $("document").ready(function () {
       });
     }
   });
+  // Reveal the menu while the bar button is clicked
+  $(".fa-bars").click(function () {
+    $("nav").toggle();
+  });
 });

@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -11,61 +10,66 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../static/styles/feeds_styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../static/styles/feeds.css" />
     <script src="../static/scripts/signout.js"></script>
     <script src="../static/scripts/feeds.js"></script>
     <title>Feeds</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <nav>
-          <div class="logo">Welcome {{ first_name }}</div>
-          <a href="" id="signout">Sign out</a>
-        </nav>
-      </header>
-      <article>
-        <div class="create-post">
-          <form id="createPost">
-            <input
-              type="text"
-              name="title"
-              id="title"
-              placeholder="What's the post title?"
-            />
-            <textarea
-              id="message"
-              name="post"
-              cols="30"
-              rows="7"
-              placeholder="{{ first_name}}, what's in your mind?"
-            ></textarea>
-            <button type="submit" id="submit">Post</button>
-            <div id="success">&nbsp;</div>
-          </form>
-        </div>
-        <div class="show-post">
-          <!-- post[0] is user_id -->
-          <!-- post[1] is username -->
-          <!-- post[2] is content_title -->
-          <!-- post[3] is content -->
-          <!-- post[4] is created_at-->
-          <!-- post[5] is content_id-->
-          {% for post in posts %}
-          <h3 class="user">{{ post[1] }} <span>{{ post[4] }}</span></h3>
-          {% if post[2] %}
-          <h4 class="post-title">Title: {{ post[2] }}</h4>
-          {% endif %}
-          <p class="post">{{ post[3] }}</p>
-          <!-- Check if the user_id who created a post is similar to any of posts user_id -->
-          {% if post_owner_id == post[0] %}
-          <i class="fa-solid fa-trash" data-content-id="{{ post[5] }}"></i>
-          {% endif %} {% endfor %}
-        </div>
-      </article>
-      <footer>
-        <p>&copy2023 All rights reserved.</p>
-      </footer>
-    </div>
+    <header>
+      <div class="logo">Welcome {{ first_name }}</div>
+      <nav>
+        <ul>
+          <li><a href="" id="signout">Sign out</a></li>
+          <li><a href="" id="feedback">Feedback</a></li>
+        </ul>
+      </nav>
+      <i class="fa-solid fa-bars"></i>
+    </header>
+
+    <article>
+      <div class="create-post">
+        <form id="createPost">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="What's the post title?"
+          />
+          <textarea
+            id="message"
+            name="post"
+            cols="30"
+            rows="7"
+            placeholder="{{ first_name}}, what's in your mind?"
+          ></textarea>
+          <button type="submit" id="submit">Post</button>
+          <div id="success">&nbsp;</div>
+        </form>
+      </div>
+      <div class="show-post">
+        <!-- post[0] is user_id -->
+        <!-- post[1] is username -->
+        <!-- post[2] is content_title -->
+        <!-- post[3] is content -->
+        <!-- post[4] is created_at-->
+        <!-- post[5] is content_id-->
+        {% for post in posts %}
+        <h3 class="user">{{ post[1] }} <span>{{ post[4] }}</span></h3>
+        {% if post[2] %}
+        <h4 class="post-title">Title: {{ post[2] }}</h4>
+        {% endif %}
+        <p class="post">{{ post[3] }}</p>
+        <!-- Check if the user_id who created a post is similar to any of posts user_id -->
+        {% if post_owner_id == post[0] %}
+        <i class="fa-solid fa-trash" data-content-id="{{ post[5] }}"></i>
+        {% endif %} {% endfor %}
+      </div>
+    </article>
+
+    <footer>
+      <p>&copy2023 All rights reserved.</p>
+    </footer>
   </body>
 </html>

@@ -180,13 +180,14 @@ footer p {
   }
 
   .menu {
-    background-color: #b0d7ff;
+    background-color: #0080ff !important;
     display: none;
     padding: 5%;
     position: absolute;
     top: 7%;
     right: 0%;
     width: 80%;
+    flex-grow: 1;
   }
   .menu li {
     padding: 15px;
