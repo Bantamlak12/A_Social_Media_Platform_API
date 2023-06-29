@@ -23,17 +23,20 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px 5%;
+  padding: 19px 5%;
 }
 
 /* THE HEADER `Welcome logo` */
 header .logo {
   font-size: 30px;
   margin-right: auto;
+  color: #fff;
 }
 
 /* THE BAR TOGGGLE MENU */
 .fa-bars {
+  color: #fff;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -76,9 +79,7 @@ article {
 .create-post form {
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
   max-width: 400px;
-  /* margin: 0 auto; */
 }
 
 /* THE FORM; THE POST TITLE */
@@ -89,6 +90,7 @@ article {
   margin-bottom: 5px;
   background-color: #107896;
   border: none;
+  color: #fff;
 }
 
 /* POST-CREATION AND POST SHOW AREAS */
@@ -105,6 +107,7 @@ article {
   font-size: 16px;
   border-radius: 20px;
   background-color: #107896;
+  color: #fff;
   border: none;
 }
 
@@ -169,6 +172,7 @@ footer {
 /* THE FOOTER TEXT */
 footer p {
   text-align: center;
+  color: #fff;
 }
 
 /* DESIGNED TO BE RESPONSIVE FOR DEVICES */
@@ -176,9 +180,15 @@ footer p {
   header .logo {
     font-size: 24px;
   }
+
+  .fa-bars {
+    font-size: 16px;
+  }
+
   nav {
     width: 40%;
   }
+
   article {
     padding: 0 3%;
   }
@@ -190,5 +200,6 @@ footer p {
   }
   nav {
     width: 50%;
+    top: 7%;
   }
 }
