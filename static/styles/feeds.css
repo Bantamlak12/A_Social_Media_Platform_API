@@ -23,7 +23,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 19px 5%;
+  padding: 25px 10%;
 }
 
 /* THE HEADER `Welcome logo` */
@@ -43,11 +43,13 @@ header .logo {
 /* THE DROPDOWN MENU */
 nav {
   background-color: #0080ff;
-  width: 20%;
-  padding: 20px;
-  position: absolute;
-  top: 8%;
   display: none;
+  /* padding: 5% ; */
+  padding-top: 30px;
+  position: absolute;
+  top: 7%;
+  right: 0%;
+  width: 20%;
 }
 
 /* THE DROP DOWN LISTS */
@@ -191,20 +193,10 @@ footer p {
   }
 
   nav {
-    width: 40%;
+    width: 100%;
   }
 
   article {
     padding: 0 3%;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  header .logo {
-    font-size: 20px;
-  }
-  nav {
-    width: 50%;
-    top: 7%;
   }
 }

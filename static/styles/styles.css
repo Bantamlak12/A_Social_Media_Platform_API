@@ -186,7 +186,7 @@ footer p {
     position: absolute;
     top: 7%;
     right: 0%;
-    width: 80%;
+    width: 100%;
     flex-grow: 1;
   }
   .menu li {

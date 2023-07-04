@@ -44,7 +44,13 @@ $("document").ready(function () {
     }
   });
   // Reveal the menu while the bar button is clicked
-  $(".fa-bars").click(function () {
+  $(".fa-bars").click(function (event) {
+    event.stopPropagation(); // Prevents the click event from from bubbling up
     $("nav").toggle();
+  });
+
+  // Hides the menu when clicked anywhere on the screen
+  $(document).click(function () {
+    $("nav").hide();
   });
 });

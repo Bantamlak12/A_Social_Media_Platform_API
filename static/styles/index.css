@@ -1,0 +1,226 @@
+/* THE HTML TEMPLATE index.html IS GIVEN THESE STYLE ATTRIBUTES. */
+
+/* UNIVERSAL SELECTOR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* THE BODY */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/pexels.jpg");
+  background-size: cover;
+}
+
+/* THE HEADER */
+header {
+  background-color: #0080ff;
+  padding: 20px 15%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+/* THE HEADER NAVIGATION */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* DESKTOP NAVIGATIONS */
+#nav.desktop-menu {
+  display: flex;
+}
+
+/* EACH NAVIGATION LISTS */
+#nav.desktop-menu li {
+  margin-right: 60px;
+}
+
+/* THE LAST NAVIGATION LIST; contact */
+#nav.desktop-menu li:last-child {
+  margin-right: 0;
+}
+
+/* APPLYING TRANSITION FOR EACH LINKS */
+#nav.desktop-menu li a {
+  transition: color 0.3s;
+}
+
+/* HOVER EFFECT */
+#nav.desktop-menu li a:hover {
+  color: darkorange;
+}
+
+/* BUTTONS */
+.signin-btn,
+#mobile-signin,
+.signup-btn {
+  background-color: darkorange;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* MOBILE SIGNIN BUTTON */
+#mobile-signin {
+  color: #fff;
+  background-color: darkorange;
+}
+
+/* HOVER FOR BUTTONS */
+.signin-btn:hover,
+.signup-btn:hover {
+  scale: 1.05;
+}
+
+/* MOBILE VIEW */
+.mobile-menu {
+  background-color: #0080ff;
+  position: absolute;
+  top: 70%;
+  right: 0%;
+  width: 100%;
+  transition: color 0.3s;
+  display: none;
+}
+
+/* EACH MOBILE NAVIGATIONS */
+.mobile-menu li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* HOVER */
+.mobile-menu a:hover {
+  color: orange;
+}
+
+/* THE TOGGLE DROPDOWN */
+.toggle-menu {
+  display: none;
+}
+
+/* ARTICLE */
+article {
+  padding: 0 10%;
+}
+
+/* MAIN HOME PAGE */
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* TOP AND BOTTOM SPACING */
+#home h1,
+p,
+a {
+  margin: 10px 0;
+}
+
+/* FONT SIZE FOR HOME H1 */
+#home h1 {
+  font-size: 80px;
+}
+
+/* HOME PARAGRAPH */
+#home p {
+  font-size: 20px;
+}
+
+/* THE ABOUT SECTION */
+#about {
+  padding-top: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* THE ABOUT TITLE */
+#about h3 {
+  padding: 5% 0;
+}
+
+/* THE LAST PARAGRAPH OF ABOUT */
+#about p:last-child {
+  margin-bottom: 10%;
+}
+
+/* FOOTER */
+footer {
+  background-color: #0080ff;
+  padding: 20px;
+  margin-top: auto;
+}
+
+/* CONTACT LINKS IN THE FOOTER */
+footer .contact-links {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTACT LINKS IN THE FOOTER */
+
+footer .contact-links a {
+  margin-right: 80px;
+  font-size: 24px;
+}
+
+/* THE LAST CONTACT LIST */
+footer .contact-links a:last-child {
+  margin-right: 0;
+}
+
+/* HOVER */
+footer .contact-links a:hover {
+  scale: 1.2;
+}
+
+/* THE FOOTER PARAGRAPH */
+footer p {
+  text-align: center;
+}
+
+/* DESIGNED TO BE RESPONSIVE */
+@media (max-width: 1060px) {
+  #home h1 {
+    font-size: 50px;
+  }
+  #about {
+    padding-top: 25%;
+  }
+}
+
+@media (max-width: 898px) {
+  #home h1 {
+    font-size: 50px;
+  }
+  #about {
+    height: auto;
+  }
+  footer .contact-links a {
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  #nav.desktop-menu,
+  .signin-btn {
+    display: none;
+  }
+  .toggle-menu {
+    display: block;
+  }
+}

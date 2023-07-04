@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 @app.route('/', methods=['GET'], strict_slashes=False)
 def home():
     """This route defines the home/landing page."""
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'], strict_slashes=False)

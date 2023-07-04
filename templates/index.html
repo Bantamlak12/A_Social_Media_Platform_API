@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/scripts/scripts.js"></script>
+    <link rel="stylesheet" href="../static/styles/index.css" />
+    <title>A social media platform API</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>BANTAMLAK TILAHUN</div>
+        <ul id="nav" class="desktop-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="{{ url_for('signin') }}" class="signin-btn">Sign in</a>
+        <i class="fa-solid fa-bars toggle-menu"></i>
+        <ul class="mobile-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="{{ url_for('signin') }}" id="mobile-signin">Sign in</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <div id="home">
+        <h1>A SOCIAL MEDIA PLATFORM</h1>
+        <p>
+          A platform that uses a RESTful API architecture for user registration,
+          sign in, sign out, post creation, and deletion.
+        </p>
+        <a href="{{ url_for('signup') }}" class="signup-btn">Sign up</a>
+      </div>
+
+      <div id="about">
+        <h1>ABOUT ME</h1>
+        <h3>EDUCATION</h3>
+        <p>Backend developer, Alx Africa 2022 - 2023</p>
+        <p>
+          BSc Degree in Leather Engineering, Bahirdar University 2016 - 2021
+        </p>
+        <h3>WHO AM I</h3>
+        <p>
+          Hello, my name is Bantamlak Tilahun, and I am a passionate software
+          engineering student. I have completed my BSc degree in leather
+          engineering from Bahirdar University. However, my strong interest and
+          passion for software engineering and technology led me to pursue
+          further studies at Alx Africa, a prestigious school in partnership
+          with Holberton.
+        </p>
+        <p>
+          During my nine-month stay at Alx Africa, I immersed myself in the core
+          principles and foundations of software engineering. I gained in-depth
+          knowledge and hands-on experience.
+        </p>
+        <p>
+          As part of the nine-month journey, I developed this portfolio project.
+          It showcases my proficiency in building a social media platform from
+          scratch. Throughout the development process, I applied best practices
+          in software engineering.
+        </p>
+        <p>
+          This project allowed me to demonstrate my ability to design and
+          implement a backend using Flask, handle user authentication and
+          authorization, integrate frontend frameworks, manage databases, and
+          deploy the application to a production environment.
+        </p>
+        <p>
+          I am continuously seeking opportunities to enhance my skills, and I am
+          confident that my passion, dedication, and acquired knowledge will
+          enable me to excel in any software endeavor I undertake.
+        </p>
+        <p>
+          Thank you for visiting my portfolio project. Feel free to explore and
+          reach out to me.
+        </p>
+      </div>
+    </article>
+
+    <footer>
+      <div id="contact">
+        <div class="contact-links">
+          <a href="mailto: bantamlak29@gmail.com" target="_blank"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+
+          <a
+            href="https://www.linkedin.com/in/bantamlak-tilahun/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/bantamlak12" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="https://twitter.com/Bantamlak_T" target="_blank"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/Bantamlak_T/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+        <div>
+          <p>&copy2023 All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

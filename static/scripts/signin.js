@@ -42,7 +42,13 @@ $(document).ready(function () {
     });
   });
   // Reveal the menu while the bar button is clicked
-  $(".menu-toggle").click(function () {
+  $(".menu-toggle").click(function (event) {
+    event.stopPropagation(); // Prevents the click event from from bubbling up
     $(".menu").toggle();
+  });
+
+  // Hides the menu when clicked anywhere on the screen
+  $(document).click(function () {
+    $(".menu").hide();
   });
 });
