@@ -140,31 +140,30 @@ a {
 }
 
 /* FEATURES IMAGE */
-#features img {
+#features-container img {
   width: 300px;
 }
 
 /* FEATURES CONTAINER */
-#features-container {
+#features {
   padding-top: 10%;
   text-align: center;
 }
 
 /* FEATURES TITLE */
-#features-container .title {
+#features .title {
   margin-bottom: 15px;
-  height: auto;
 }
 
 /* THE FEATURES */
-#features {
+#features-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 /* THE FEATURES TITLE */
-#features h4 {
+#features-container h4 {
   padding-bottom: 20px;
 }
 
@@ -260,7 +259,7 @@ footer p {
     height: auto;
   }
 
-  #features-container {
+  #features {
     padding-top: 25%;
   }
 
