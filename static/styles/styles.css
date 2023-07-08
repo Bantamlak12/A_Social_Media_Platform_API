@@ -121,7 +121,7 @@ button:hover {
 
 /* SUCCESS MESSAGE WHILE SUCCESSFULL SIGN UP AND SIGN IN */
 #success_msg {
-  color: #1aff1a;
+  color: green;
   margin-bottom: 15px;
   font-size: 18px;
 }
