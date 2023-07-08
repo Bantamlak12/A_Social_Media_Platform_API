@@ -19,18 +19,22 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       contentType: "application/json",
       success: function (response) {
-        // Resets the input fields
-        $("#signupForm")[0].reset();
+        if (response.success_msg) {
+          // Resets the input fields
+          $("#signupForm")[0].reset();
+        }
         if (response.username_msg) {
           $("#username_msg").text(response.username_msg);
           setTimeout(function () {
             $("#username_msg").text("");
           }, 3000);
+          $("#signupForm input[name=username]").val("");
         } else if (response.email_msg) {
           $("#email_msg").text(response.email_msg);
           setTimeout(function () {
             $("#email_msg").text("");
           }, 3000);
+          $("#signupForm input[name=email]").val("");
         } else if (response.password_msg) {
           $("#password_msg").text(response.password_msg);
           setTimeout(function () {

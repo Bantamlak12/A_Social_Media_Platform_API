@@ -22,7 +22,7 @@ body {
 /* THE HEADER */
 header {
   background-color: #0080ff;
-  padding: 20px 15%;
+  padding: 25px 15%;
   position: fixed;
   width: 100%;
   z-index: 999;

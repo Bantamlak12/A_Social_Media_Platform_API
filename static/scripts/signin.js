@@ -16,12 +16,15 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       contentType: "application/json",
       success: function (response) {
-        $("#signinForm")[0].reset();
+        if (response.success) {
+          $("#signinForm")[0].reset();
+        }
         if (response.signin_username_error) {
           $("#signin_username_error").text(response.signin_username_error);
           setTimeout(function () {
             $("#signin_username_error").text("");
           }, 2000);
+          $("#signinForm input[name=username]").val("");
         }
 
         if (response.signin_password_error) {
@@ -29,6 +32,7 @@ $(document).ready(function () {
           setTimeout(function () {
             $("#signin_password_error").text("");
           }, 2000);
+          $("#signinForm input[name=password]").val("");
         }
 
         if (response.success) {
