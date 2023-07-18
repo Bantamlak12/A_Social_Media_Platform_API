@@ -2,9 +2,9 @@
 
 This is a social media platform API built using Flask, MySQL, and JWT authentication. It provides endpoints for user registration, sign-in, sign-out, post creation, and post deletion. The API allows users to interact with the platform by creating posts, and accessing their feeds.
 
-<a href="https://www.bante.tech" target="_blank">Link to the deployed site</a>
+[Link to the deployed app](https://www.bante.tech)
 
-<a href="https://bantamlak-tilahun.hashnode.dev/building-a-user-focused-social-media-platform-personal-journey" target="_blank">Link to blog post</a>
+[Link to the blog post](https://bantamlak-tilahun.hashnode.dev/building-a-user-focused-social-media-platform-personal-journey)
 
 ## Table of Contents
 
