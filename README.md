@@ -4,6 +4,8 @@ This is a social media platform API built using Flask, MySQL, and JWT authentica
 
 [Link to the deployed site](https://www.bante.tech)
 
+[Link to blog post](https://bantamlak-tilahun.hashnode.dev/building-a-user-focused-social-media-platform-personal-journey)
+
 ## Table of Contents
 
 - [Features](#features)
