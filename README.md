@@ -2,9 +2,9 @@
 
 This is a social media platform API built using Flask, MySQL, and JWT authentication. It provides endpoints for user registration, sign-in, sign-out, post creation, and post deletion. The API allows users to interact with the platform by creating posts, and accessing their feeds.
 
-[Link to the deployed site](https://www.bante.tech)
+<a href="https://www.bante.tech" target="_blank">Link to the deployed site</a>
 
-[Link to blog post](https://bantamlak-tilahun.hashnode.dev/building-a-user-focused-social-media-platform-personal-journey)
+<a href="https://bantamlak-tilahun.hashnode.dev/building-a-user-focused-social-media-platform-personal-journey" target="_blank">Link to blog post</a>
 
 ## Table of Contents
 
@@ -20,10 +20,10 @@ This is a social media platform API built using Flask, MySQL, and JWT authentica
 
 ## Features
 
-- `User Registration`: Users can create a new account by providing their personal information.
+- `User sign up`: Users can create a new account by providing their personal information.
 - `User sign-in`: Registered users can sign in to access their account and perform actions.
-- `User sign-out`: Users can log out of their account to end their session.
-- `Post Creation`: signed-in users can create new posts by providing the post content.
+- `User sign-out`: Users can sign out of their account to end their session.
+- `Post Creation`: signed-in users can create new posts.
 - `Post Deletion`: Users can delete their own posts.
 - `Responsive UI`: Both mobile and desktop responsive user interface.
 
@@ -85,9 +85,7 @@ curl -X POST http://0.0.0.0:5000/signup \
 
 The output looks like:
 
-```
-{"success_msg":"Successfully Signed up!"}
-```
+`{"success_msg":"Successfully Signed up!"}`
 
 To sign in:
 
@@ -97,9 +95,7 @@ curl -X POST http://0.0.0.0:5000/signin -H "Content-Type: application/json" -d '
 
 The output looks like:
 
-```
-{"success":"Signed in Successfully"}
-```
+`{"success":"Signed in Successfully"}`
 
 Refer to the [API Endpoints](#api-endpoints) section below for detailed information on each endpoint and their usage.
 
