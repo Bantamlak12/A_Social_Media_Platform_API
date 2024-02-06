@@ -5,3 +5,4 @@ Werkzeug
 Gunicorn
 MySQL
 email_validator
+
